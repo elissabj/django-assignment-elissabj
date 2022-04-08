@@ -1,10 +1,42 @@
 version: '3'
 services:
+  # DON'T FORGET TO CHANGE THE 08 WITH YOUR PORT
+  # elisa_ramos WITH YOUR UNIX USER
+  postgres_db:
+    image: postgres:14-alpine
+    container_name: "postgres08"
+    environment:
+      - "POSTGRES_PASSWORD=YourUltraSecretPassword123"
+      - "POSTGRES_DB=elisa_ramos_db"
+      - "POSTGRES_USER=elisa_ramos"
+    ports:
+      - "10008:5508"
+    volumes:
+      - "/home/elisa_ramos/postgres:/usr/src/postgres"
+    networks:
+      - our-library-net
+    command: -p 5508
+
   web:
     build: .
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    container_name: "djangoXX"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8008"
+    container_name: "django08"
+    depends_on: 
+      - postgres_db
+    environment:
+      - "PSQL_DBNAME=elisa_ramos_db"
+      - "PSQL_USERNAME=elisa_ramos"
+      - "PSQL_PASS=SecretPassword123"
+      - "PSQL_HOST=172.24.0.5" # You must use the command of the README.md file in order to get this IP address
+      - "PSQL_PORT=5508"
     volumes:
-      - "/home/YOUR_USER/django/library:/usr/src/django/library"
+      - "/home/elisa_ramos/django/django-assignment-elissabj:/usr/src/django/library"
     ports:
-      - "90XX:8000"
+      - "9008:8008"
+    networks:
+      - our-library-net
+
+networks:
+  our-library-net:
+    external: true
+    driver: bridge
