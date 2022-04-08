@@ -5,7 +5,7 @@ services:
     image: postgres:14-alpine
     container_name: "postgres08"
     environment:
-      - "POSTGRES_PASSWORD=SecretPassword$123"
+      - "POSTGRES_PASSWORD=SecretPassword123"
       - "POSTGRES_DB=elisa_ramos_db"
       - "POSTGRES_USER=elisa_ramos"
     ports:
@@ -14,7 +14,7 @@ services:
       - "/home/elisa_ramos/postgres:/usr/src/postgres"
     networks:
       - our-library-net
-    command: -p 5508
+    command: -p 5432
 
   web:
     build: .
@@ -25,8 +25,8 @@ services:
     environment:
       - "PSQL_DBNAME=elisa_ramos_db"
       - "PSQL_USERNAME=elisa_ramos"
-      - "PSQL_PASS=SecretPassword$123"
-      - "PSQL_HOST=172.24.0.5" # You must use the command of the README.md file in order to get this IP address
+      - "PSQL_PASS=SecretPassword123"
+      - "PSQL_HOST=172.24.0.25" # You must use the command of the README.md file in order to get this IP address
       - "PSQL_PORT=5508"
     volumes:
       - "/home/elisa_ramos/django/django-assignment-elissabj:/usr/src/django/library"
@@ -36,6 +36,7 @@ services:
       - our-library-net
 
 networks:
-  our-library-net:
+  our-library-net: 
     external: true
     driver: bridge
+  
