@@ -1,12 +1,11 @@
 version: '3'
 services:
-  # DON'T FORGET TO CHANGE THE 08 WITH YOUR PORT
-  # elisa_ramos WITH YOUR UNIX USER
+
   postgres_db:
     image: postgres:14-alpine
     container_name: "postgres08"
     environment:
-      - "POSTGRES_PASSWORD=YourUltraSecretPassword123"
+      - "POSTGRES_PASSWORD=SecretPassword$123"
       - "POSTGRES_DB=elisa_ramos_db"
       - "POSTGRES_USER=elisa_ramos"
     ports:
@@ -26,7 +25,7 @@ services:
     environment:
       - "PSQL_DBNAME=elisa_ramos_db"
       - "PSQL_USERNAME=elisa_ramos"
-      - "PSQL_PASS=SecretPassword123"
+      - "PSQL_PASS=SecretPassword$123"
       - "PSQL_HOST=172.24.0.5" # You must use the command of the README.md file in order to get this IP address
       - "PSQL_PORT=5508"
     volumes:
