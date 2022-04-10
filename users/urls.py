@@ -3,7 +3,7 @@ from rest_framework import routers
 from django.urls import path, include
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
+router.register(r'', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
