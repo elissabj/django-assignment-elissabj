@@ -16,3 +16,4 @@ class BooksAuthorsViewSet(viewsets.ModelViewSet):
     queryset = BooksAuthors.objects.all()
     serializer_class = BooksAuthorsSerializer
     permission_classes = []
+
