@@ -3,7 +3,7 @@ from rest_framework import permissions
 from books.serializers import *
 
 class AuthorViewSet(viewsets.ModelViewSet):
-    queryset = Author.objects.all().order_by('name')
+    queryset = Author.objects.all()
     serializer_class = AuthorSerializer
     permission_classes = []
 
