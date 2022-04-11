@@ -26,7 +26,7 @@ services:
       - "PSQL_DBNAME=elisa_ramos_db"
       - "PSQL_USERNAME=elisa_ramos"
       - "PSQL_PASS=SecretPassword123"
-      - "PSQL_HOST=172.24.0.23" 
+      - "PSQL_HOST=172.24.0.21" 
       - "PSQL_PORT=5508"
     volumes:
       - "/home/elisa_ramos/django/django-assignment-elissabj:/usr/src/django/library"
