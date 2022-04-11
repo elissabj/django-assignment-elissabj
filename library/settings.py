@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     #'corsheaders',
     'drf_yasg',
     'rest_framework',
-    #'editorial',
-    'library.users',
-    'library.books',
+    'editorial',
+    'users',
+    'books',
 ]
 
 MIDDLEWARE = [
