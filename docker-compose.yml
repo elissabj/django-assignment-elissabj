@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-  postgres_db:
+  postgres_db08:
     image: postgres:14-alpine
     container_name: "postgres08"
     environment:
@@ -16,12 +16,12 @@ services:
       - our-library-net
     command: -p 5508
 
-  web:
+  web08:
     build: .
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8008"
     container_name: "django08"
     depends_on: 
-      - postgres_db
+      - postgres_db08
     environment:
       - "PSQL_DBNAME=elisa_ramos_db"
       - "PSQL_USERNAME=elisa_ramos"
