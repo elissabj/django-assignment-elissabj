@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     #'corsheaders',
     'drf_yasg',
     'rest_framework',
-    'library.animal',
+    'library.animals',
     'library.users',
     'library.books',
     'library.disney',
