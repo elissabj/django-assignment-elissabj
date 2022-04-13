@@ -16,4 +16,3 @@ class DisneyCompanySerializer (serializers.ModelSerializer):
     class Meta:
         model = DisneyCompany
         fields = ['id', 'movie', 'company']
-

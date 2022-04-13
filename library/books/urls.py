@@ -1,4 +1,4 @@
-from books import views
+from library.books import views
 from rest_framework import routers
 from django.urls import path, include
 

@@ -1,4 +1,4 @@
-from animals import views
+from library.animals import views
 from rest_framework import routers
 from django.urls import path, include
 

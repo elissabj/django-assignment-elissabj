@@ -16,4 +16,3 @@ class AnimalEnviSerializer (serializers.ModelSerializer):
     class Meta:
         model = AnimalEnvi
         fields = ['id', 'animal', 'environment']
-

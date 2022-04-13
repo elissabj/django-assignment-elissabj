@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     #'corsheaders',
     'drf_yasg',
     'rest_framework',
-    'library.animals',
+    #'editorial',
     'library.users',
     'library.books',
     'library.disney',
+    'library.animals',
 ]
 
 MIDDLEWARE = [

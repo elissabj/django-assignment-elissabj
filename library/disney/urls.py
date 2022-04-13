@@ -1,4 +1,4 @@
-from disney import views
+from library.disney import views
 from rest_framework import routers
 from django.urls import path, include
 
